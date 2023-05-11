@@ -1,0 +1,13 @@
+version: '3'
+services:
+  webserver:
+    build:
+      context: node
+      dockerfile: Dockerfile
+    image: node-express-dev:1.0
+    tty: true
+    volumes:
+      - ./node/tea-database-api:/tea-database-api
+    # ポート番号合わせたほうが混乱しなくていいかも
+    ports:
+      - "8000:8000"
